@@ -1,0 +1,43 @@
+# services:
+#   - type: web
+#     name: careslot-api
+#     runtime: node
+#     rootDir: server
+#     plan: free
+#     buildCommand: npm install
+#     startCommand: npm start
+#     healthCheckPath: /api/health
+#     envVars:
+#       - key: NODE_ENV
+#         value: production
+#       - key: MONGODB_URI
+#         sync: false # paste your MongoDB Atlas connection string in the Render dashboard
+#       - key: JWT_SECRET
+#         generateValue: true
+#       - key: CLIENT_URL
+#         sync: false # your Vercel URL, for example https://careslot.vercel.app
+#       - key: CLINIC_TIMEZONE
+#         value: Asia/Karachi
+
+
+
+services:
+  - type: web
+    name: careslot-api
+    runtime: node
+    rootDir: backend
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CLIENT_URL
+        sync: false
+      - key: CLINIC_TIMEZONE
+        value: Asia/Karachi
